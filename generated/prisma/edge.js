@@ -125,7 +125,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "c:\\Users\\fabin\\OneDrive\\Área de Trabalho\\Curso e projetos\\server-backend-turma-148\\generated\\prisma",
+      "value": "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\Curso e projetos\\server-backend-turma-148\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -139,7 +139,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "c:\\Users\\fabin\\OneDrive\\Área de Trabalho\\Curso e projetos\\server-backend-turma-148\\prisma\\schema.prisma",
+    "sourceFilePath": "C:\\Users\\fabin\\OneDrive\\Área de Trabalho\\Curso e projetos\\server-backend-turma-148\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -157,13 +157,13 @@ const config = {
   "inlineDatasources": {
     "db": {
       "url": {
-        "fromEnvVar": "DATABASE_URL",
-        "value": null
+        "fromEnvVar": null,
+        "value": "file:./dev.db"
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel User {\n  id       Int    @id @default(autoincrement())\n  name     String @unique\n  email    String\n  password String\n}\n\nmodel List {\n  id          Int    @id @default(autoincrement())\n  description String\n  price       Float\n  quantity    Int\n  Image       String\n}\n",
-  "inlineSchemaHash": "71a6c2fe176377c9ba1dba859ff744e44feb5e6d88ad7f621b0718e03d4061c3",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = \"file:./dev.db\"\n}\n\nmodel User {\n  id       Int    @id @default(autoincrement())\n  name     String @unique\n  email    String\n  password String\n}\n\nmodel List {\n  id          Int    @id @default(autoincrement())\n  description String\n  price       Float\n  quantity    Int\n  Image       String\n}\n",
+  "inlineSchemaHash": "1a418741e56069c0cb8ff46a21015437f8a48dd464775d6d9339078038b28e43",
   "copyEngine": true
 }
 config.dirname = '/'
@@ -174,9 +174,7 @@ config.engineWasm = undefined
 config.compilerWasm = undefined
 
 config.injectableEdgeEnv = () => ({
-  parsed: {
-    DATABASE_URL: typeof globalThis !== 'undefined' && globalThis['DATABASE_URL'] || typeof process !== 'undefined' && process.env && process.env.DATABASE_URL || undefined
-  }
+  parsed: {}
 })
 
 if (typeof globalThis !== 'undefined' && globalThis['DEBUG'] || typeof process !== 'undefined' && process.env && process.env.DEBUG || undefined) {
