@@ -10,7 +10,7 @@ export default {
         return res.status(201).json(user)
     },
     read : async(req: Request, res: Response) => {
-        const user = await prisma.user.findMany({select: {password: false, id: true, name: true}})
+        const user = await prisma.user.findMany({select: {password: false, id: true, name: true, email: true}})
         return res.status(200).json(user)
     },
     update : async(req: Request, res: Response) => {
